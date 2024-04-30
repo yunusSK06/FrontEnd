@@ -273,7 +273,7 @@
                     <label><input type="checkbox">Remember me</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn" id="login">Login</button>
+                <button type="submit" class="btn" id="submit" value="submit">Login</button>
                 <div class="login-register">
                     <p>Dont have an Account?<a href="#" class="register-link">Register</a></p>
                 </div>
@@ -300,7 +300,7 @@
                 <div class="remember-forgot">
                     <label><input type="checkbox">I agree to the terms & Conditions</label>
                 </div>
-                <button type="submit" class="btn" id="register">Register</button>
+                <button type="submit" class="btn" id="submit1" value="submit">Register</button>
                 <div class="login-register">
                     <p>Already have an Account?<a href="#" class="login-link">Login</a></p>
                 </div>
@@ -330,5 +330,38 @@
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+            import { getDatabase, ref,set,get,child } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+          
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyDd_dCAAKt5Bi7sm9zzkVWme2qU6xyQj-g",
+              authDomain: "myapplication-46c97.firebaseapp.com",
+              projectId: "myapplication-46c97",
+              storageBucket: "myapplication-46c97.appspot.com",
+              messagingSenderId: "249848829171",
+              appId: "1:249848829171:web:f3efcbb07c90d14c339386"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const db= getDatabase(app);
+            document.getElementById("submit1").addEventListener('click', async function(e){
+                e.preventDefault();
+                try {
+                    await set(ref(db, 'user/' + document.getElementById("username").value), {
+                        username: document.getElementById("username").value,
+                        email: document.getElementById("email").value,
+                        password: document.getElementById("password").value
+                    });
+                    alert("Registration Successful!!!");
+                } catch (error) {
+                    console.error("Error adding user to database:", error);
+                    alert("Registration Failed!"); // Inform user of the error
+                }
+            });
+          </script>
 </body>
 </html>
