@@ -25,7 +25,7 @@
         }
         .logo{
             font-size: 2em;
-            color: white;
+            color: rgb(233, 66, 15);
             user-select: none;
         }
         header {
@@ -51,7 +51,7 @@
             width: 130px;
             height: 50px;
             background: transparent;
-            border: 2px solid #fff;
+            border: 2px solid rgb(233, 66, 15);
             outline: none;
             border-radius: 6px;
             cursor: pointer;
@@ -62,7 +62,7 @@
             transition: .5s;
         }
         .navigation .btnlogin-popup:hover {
-            background: #fff;
+            background: #d41474;
             color: #162938;
         }
         .navigation a::after{
@@ -199,7 +199,7 @@
         .btn{
             width: 100%;
             height: 45px;
-            background: #162938;
+            background: #d41474;
             border: none;
             outline: none;
             border-radius: 6px;
@@ -230,7 +230,7 @@
             right: 0;
             width: 45px;
             height: 45px;
-            background: #162938;
+            background: #3ca3ec;
             font-size: 2em;
             color: #fff;
             display: flex;
@@ -244,7 +244,7 @@
 </head>
 <body>
     <header>
-        <h2 class="logo">icon</h2>
+        <h2 class="logo">JOD</h2>
         <nav class="navigation">
             <a href="#">Home</a>
             <a href="#">Services</a>
@@ -261,19 +261,19 @@
             <form action="#">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" required>
+                    <input type="text"  id="email" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" required>
+                    <input type="password" id="password" required>
                     <label>Password</label>
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox">Remember me</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn" id="login">Login</button>
                 <div class="login-register">
                     <p>Dont have an Account?<a href="#" class="register-link">Register</a></p>
                 </div>
@@ -284,23 +284,23 @@
             <form action="#">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                    <input type="text" required>
+                    <input type="text" id="username" required>
                     <label>Username</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" required>
+                    <input type="text" id="email" required>
                     <label>Email</label>
                 </div>                
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" required>
+                    <input type="password" id="password" required>
                     <label>Password</label>
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox">I agree to the terms & Conditions</label>
                 </div>
-                <button type="submit" class="btn">Register</button>
+                <button type="submit" class="btn" id="register">Register</button>
                 <div class="login-register">
                     <p>Already have an Account?<a href="#" class="login-link">Login</a></p>
                 </div>
